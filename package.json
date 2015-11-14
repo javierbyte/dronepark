@@ -6,6 +6,7 @@
     "async": "^1.4.2",
     "dotenv": "^1.1.0",
     "keystone": "^0.3.14",
+    "keystone-social-login": "johnnyestilles/keystone-social-login",
     "lodash": "^3.10.1",
     "underscore": "^1.8.3"
   },

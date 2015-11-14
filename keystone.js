@@ -1,6 +1,7 @@
 require('dotenv').load()
 
 var keystone = require('keystone')
+var social = require('keystone-social-login')
 
 keystone.init({
   'name': 'dronodromo',
@@ -16,7 +17,16 @@ keystone.init({
   'session': true,
   'auth': true,
   'user model': 'User'
+})
 
+social.config({
+  keystone: keystone,
+  providers: {
+    twitter: {
+      clientID: process.env.TWITTER_CLIENT,
+      clientSecret: process.env.TWITTER_CLIENT_SECRET
+    }
+  }
 })
 
 keystone.import('models')
@@ -35,4 +45,5 @@ keystone.set('nav', {
   'users': 'users'
 })
 
+social.start()
 keystone.start()

@@ -3,6 +3,8 @@ var Types = keystone.Field.Types
 
 var User = new keystone.List('User')
 
+var social = require('keystone-social-login')
+
 User.add({
   name: { type: Types.Name, required: true, index: true },
   email: { type: Types.Email, initial: true, required: true, index: true },
@@ -16,4 +18,7 @@ User.schema.virtual('canAccessKeystone').get(function () {
 })
 
 User.defaultColumns = 'name, email, isAdmin'
+
+social.plugin(User)
+
 User.register()
