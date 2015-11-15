@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block content
+  div.padding-2
+    h2.flex.flex-align-center
+      img(src='http://avatars.io/twitter/' + userdata.twitterLoginId).avatar
+      div.padding-1 hurraa! #{_.get(userdata, ['name', 'first'])}
+
+
+  div.padding-2
+    h3 Otros racers en Drone Park:
+    ul
+    -each user in socialUsers
+      li: a(href='http://twitter.com/' + user, target='_blank')= user
+  // div= JSON.stringify({userdata, socialUsers})
