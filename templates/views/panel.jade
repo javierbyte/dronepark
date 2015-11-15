@@ -8,7 +8,6 @@ block content
           h2.flex.flex-align-center
             img(src='http://avatars.io/twitter/' + userdata.twitterLoginId).avatar.margin-right-H
             div #{_.get(userdata, ['name', 'first'])}
-            div , beginner
 
         div.flex-1
         div.padding-1.flex.txt-center
@@ -20,11 +19,16 @@ block content
             div Tournaments
 
       div.padding-2.list
-        h3 Your drone park team:
+        h3 Your drone park team.
         -each user in socialUsers
-          a(href='http://twitter.com/' + user, target='_blank').flex.flex-align-center.list-element
+          div.flex.flex-align-center.list-element
             img(src='http://avatars.io/twitter/' + user).avatar.margin-right-H
-            div= user
+            b: a(href='http://twitter.com/' + user, target='_blank')= user
+            a(href='https://twitter.com/home?status=' + encodeURIComponent('Oye @' + user + ' te reto a una batalla en #DronePark, te animas?'), target='_blank').micro-button Challenge!
+
+      div.padding-2.list
+        h3 Contact us.
+        id Let us know if you have an idea! at #[b: a(mailto:info@dronepark.racing) info@dronepark.racing]
       // div= JSON.stringify({userdata, socialUsers})
 
     div.panel-sidebar.flex.flex-direction-column
