@@ -1,16 +1,44 @@
 extends ../layouts/default
 
 block content
-  div.padding-2
-    h2.flex.flex-align-center
-      img(src='http://avatars.io/twitter/' + userdata.twitterLoginId).avatar
-      div.padding-1 #{_.get(userdata, ['name', 'first'])}
+  div.panel.flex
+    div.flex-1
+      div.panel-nav.padding-1.flex.flex-align-center
+        div.padding-1
+          h2.flex.flex-align-center
+            img(src='http://avatars.io/twitter/' + userdata.twitterLoginId).avatar.margin-right-H
+            div #{_.get(userdata, ['name', 'first'])}
+            div , beginner
 
+        div.flex-1
+        div.padding-1.flex.txt-center
+          div.padding-1
+            h2 0
+            div Flight hours
+          div.padding-1
+            h2 0
+            div Tournaments
 
-  div.padding-2
-    h3 Otros racers en Drone Park:
-    -each user in socialUsers
-      a(href='http://twitter.com/' + user, target='_blank').flex.flex-align-center
-        img(src='http://avatars.io/twitter/' + user).avatar.margin-right-H
-        div= user
-  // div= JSON.stringify({userdata, socialUsers})
+      div.padding-2
+        h3 Your drone park team:
+        -each user in socialUsers
+          a(href='http://twitter.com/' + user, target='_blank').flex.flex-align-center
+            img(src='http://avatars.io/twitter/' + user).avatar.margin-right-H
+            div= user
+      // div= JSON.stringify({userdata, socialUsers})
+
+    div.panel-sidebar.padd.flex.flex-direction-column
+      div.padding-1
+        div.padding-1
+          h2 Next events
+
+        div.padding-1
+          h4 First beginners race for startup weekend attendees.
+          div.flex
+            b 15/11/15
+            div.flex-1
+            b= ' 10:00 AM'
+
+      div.flex-1
+      div.padding-2.txt-center
+        h3: a(href='') Suggest an event

@@ -98,20 +98,53 @@ h3, h4 {
   }
 }
 
+.panel {
+  background: saturate(darken(@primary-color, 12%), 2%);
+  color: #fff;
+  min-height: 100vh;
+  &-nav {
+    background: @primary-color;
+    .box-shadow;
+  }
+
+  a {
+    color: #fff;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-sidebar {
+    width: 20em;
+    background: @darkblue-color;
+  }
+}
+
 //
+.box-shadow {
+  box-shadow: rgba(0,0,0,0.05) 0 1px 0, rgba(0,0,0,0.05) 0 2px 5px;
+}
 
 .button-big {
+  text-decoration: none !important;
   display: inline-block;
   margin: 0 auto;
   margin-top: 2.5em;
   line-height: 1;
   padding: 0.8em 1.4142em;
   background: #fff;
-  color: #000;
+  color: #000 !important;
   border-radius: 2.5em;
   font-weight: 500;
   text-shadow: none;
   font-size: 1.309em;
+  text-align: center;
+
+  &.-full {
+    width: 100%;
+    display: block;
+  }
 
   &.-blue {
     background: @primary-color;
