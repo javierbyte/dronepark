@@ -1,7 +1,7 @@
 extends ../layouts/default
 
 block content
-  div.panel.flex
+  div.panel
     div.flex-1
       div.panel-nav.padding-1.flex.flex-align-center
         div.padding-1
@@ -27,7 +27,7 @@ block content
             div= user
       // div= JSON.stringify({userdata, socialUsers})
 
-    div.panel-sidebar.padd.flex.flex-direction-column
+    div.panel-sidebar.flex.flex-direction-column
       div.padding-1
         div.padding-1
           h2 Next events
@@ -40,5 +40,5 @@ block content
             b= ' 10:00 AM'
 
       div.flex-1
-      div.padding-2.txt-center.big-screen
+      div.padding-2.txt-center
         h3: a(href='') Suggest an event
