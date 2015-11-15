@@ -72,9 +72,28 @@ h3, h4 {
 }
 
 .intro {
-  background: fade(@primary-color, 85%);
   overflow: hidden;
   text-align: center;
+
+  background: url(/images/fpv.jpg) no-repeat center;
+  background-size: cover;
+
+  &-email {
+    color: #fff;
+    text-shadow: none;
+    margin-top: 1em;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: fade(@primary-color, 85%);
+  }
 }
 
 .register {
