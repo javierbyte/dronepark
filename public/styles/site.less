@@ -16,6 +16,10 @@ body {
   font-weight: 300;
 }
 
+b {
+  font-weight: 500;
+}
+
 h1 {
   font-weight: 100;
 }
@@ -29,7 +33,11 @@ h3, h4 {
 .content {
   max-width: @site-width;
   margin: 0 auto;
-  padding: 4rem 1rem;
+  padding: 15vmin 1rem;
+
+  &-big {
+    min-height: 75vh;
+  }
 }
 
 .background-video {
@@ -60,30 +68,50 @@ h3, h4 {
   background: fade(@primary-color, 85%);
   overflow: hidden;
   text-align: center;
-
-  &-content {
-    min-height: 75vh;
-  }
-}
-
-.drones {
-  &-element {
-    text-align: center;
-    padding: 2rem 1rem;
-
-    &:nth-child(2) {
-      img {
-        animation-delay: -2s;
-      }
-    }
-  }
 }
 
 .register {
-  background: @primary-color;
+  &-absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &-absolute-left {
+    position: absolute;
+    top: -5vmin;
+    left: 8vmin;
+  }
+
+  &-absolute-right {
+    position: absolute;
+    top: 15vmin;
+    right: 0;
+  }
 }
 
 //
+
+.button-big {
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 2.5em;
+  line-height: 1;
+  padding: 0.8em 1.4142em;
+  background: #fff;
+  color: #000;
+  border-radius: 2.5em;
+  font-weight: 500;
+  text-shadow: none;
+  font-size: 1.309em;
+
+  &.-blue {
+    background: @primary-color;
+    color: #fff;
+    border: 5px solid #fff;
+  }
+}
 
 .button {
   border-radius: 2em;
@@ -99,6 +127,10 @@ h3, h4 {
 }
 
 // utils
+
+.txt-center {
+  text-align: center;
+}
 
 .white-text {
   color: #fff;

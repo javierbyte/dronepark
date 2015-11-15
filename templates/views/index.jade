@@ -3,51 +3,25 @@ extends ../layouts/default
 block content
 	div.nav.padding-2.white-text.flex.flex-align-stretch.flex-justify-center
 		div.flex-1
-		a Más información
-		div.padding-1
-		a.button.-white Regístrate
+		a(href='/social/twitter/login').button.-white Inicia con twitter
 
-	div.intro: div.intro-content.content.white-text.flex.flex-direction-column.flex-justify-center.padding-1
+	div.intro: div.content.content-big.white-text.flex.flex-direction-column.flex-justify-center.padding-1
 		h1 The Drone Park
-		div.slogan Racing
+		h2 Racing. Fighting. Training.
+		a(href='/social/twitter/login').button-big Inicia sesión con twitter
 
 		div.background-video
 			// iframe(frameborder="0", height="100%", width="100%", src="https://www.youtube.com/embed/Parubk_HUj8?autoplay=1&controls=0&loop=1&rel=0&showinfo=0&autohide=1&wmode=transparent&hd=1")
 
-	div.about: div.content: div.padding-1
-		h2 Contenido
-		div test
+	div.about.txt-center: div.content: div.padding-1
+	//	h1 Contenido
+	//	h2 El mejor lugar para correr drones.
 
-	div.drones: div.content
-		h2.padding-1 Drones
-		div.flex.flex-align-stretch
-			div.drones-element.flex-1.flex.flex-direction-column.flex-align-stretch
-				div.flex-1.flex.flex-align-center
-					img(src="/images/hubsan.jpg", alt="").animation-float
-				h4 Hubsan X4
-				div Confiable, pequeño y casi indestructible.
-
-			div.drones-element.flex-1.flex.flex-direction-column.flex-align-stretch
-				div.flex-1.flex.flex-align-center
-					img(src="/images/zyma.jpg", alt="").animation-float
-				h4 Zyma
-				div El mejor drone.
-
-			div.drones-element.flex-1.flex.flex-direction-column.flex-align-stretch
-				div.flex-1.flex.flex-align-center
-					img(src="/images/orbit.jpg", alt="").animation-float
-				h4 Orbit 250
-				div Custom hardcore drone para pros.
-
-	div.register.white-text: div.content
-		h2.padding-1 ¡Únete!
-		form.padding-1x(method='post', autocomplete='off')
-			input(type='hidden', name='action', value='user.create')
-
-			h3 Email
-			input(type='email', placeholder='Tu email', name='email', value=formData.email)
-			h3 Contraseña
-			input(type='password', placeholder='Elige tu contraseña', name='password', value=formData.password)
-
-			button(type='submit')
-				div Registrarse
+	div.register.txt-center.padding-3
+		img(src='/images/team.jpg').register-absolute
+		img(src='/images/drone1.jpg').register-absolute-right.animation-float
+		img(src='/images/drone2.jpg').register-absolute-left.animation-float.animation-float-delay
+		h1 ¡Únete!
+		h2 Ya somos #[b= socialUsers.length] racers
+		-each social in socialUsers
+			a(href='/social/twitter/login').button-big.-blue Inicia sesión con twitter

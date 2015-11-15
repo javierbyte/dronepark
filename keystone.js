@@ -21,6 +21,10 @@ keystone.init({
 
 social.config({
   keystone: keystone,
+  'auto create user': true,
+  onAuthenticate: function () {
+    console.log('\nLOGIN SUCCESS', arguments)
+  },
   providers: {
     twitter: {
       clientID: process.env.TWITTER_CLIENT,

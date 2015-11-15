@@ -1,46 +1,17 @@
 var keystone = require('keystone')
+const _ = require('lodash')
 
 exports = module.exports = function (req, res) {
   const view = new keystone.View(req, res)
-  const locals = res.locals
-
-  var User = keystone.list('User')
+  var locals = res.locals
 
   locals.section = 'home'
+  locals._ = _
 
-  locals.formData = {
-    email: '',
-    pass: ''
-  }
+  keystone.list('User').model.find().exec(function (err, userList) {
+    if (err) return console.log(err)
+    locals.socialUsers = _(userList).map('twitterLoginId').compact().value()
 
-  view.on('post', {
-    action: 'user.create'
-  }, function (next) {
-    const newUser = new User.model({
-      name: {
-        first: locals.formData.first,
-        last: locals.formData.last
-      }
-    })
-
-    console.log('\nnew user register', req.body)
-
-    var updater = newUser.getUpdateHandler(req)
-
-    updater.process(req.body, {
-      fields: 'email, password',
-      flashErrors: true,
-      logErrors: true
-    }, function (err, result) {
-      if (err) {
-        console.log('ERROR:', err)
-      } else {
-        req.flash('success', 'Account created. Please sign in.')
-        return res.redirect('/panel')
-      }
-      next()
-    })
+    view.render('index')
   })
-
-  view.render('index')
 }
