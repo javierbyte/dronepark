@@ -14,7 +14,8 @@ html
 		link(href="/styles/site.min.css", rel="stylesheet")
 		link(href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500', rel='stylesheet', type='text/css')
 
-		link(rel="stylesheet", type="text/css", href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css")
+		link(rel="stylesheet", type="text/css", href="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css")
+		link(rel="stylesheet", type="text/css", href="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick-theme.css")
 
 		block css
 		block head
@@ -23,5 +24,8 @@ html
 		#body
 			block content
 
-		script(type="text/javascript", src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+		script(src='//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js')
+		script.
+			$('.slider').slick({autoplay: true, autoplaySpeed: 3000})
 		block js
