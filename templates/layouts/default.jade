@@ -8,11 +8,13 @@ html
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 
-		title= title || 'dronodromo'
+		title= title || 'Drone Park - Racing'
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 
 		link(href="/styles/site.min.css", rel="stylesheet")
 		link(href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500', rel='stylesheet', type='text/css')
+
+		link(rel="stylesheet", type="text/css", href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css")
 
 		block css
 		block head
@@ -21,4 +23,5 @@ html
 		#body
 			block content
 
+		script(type="text/javascript", src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")
 		block js
