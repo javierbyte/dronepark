@@ -20,6 +20,13 @@ b {
   font-weight: 500;
 }
 
+a {
+  color: @primary-color;
+  &:hover {
+    color: darken(@primary-color, 20%);
+  }
+}
+
 h1 {
   font-weight: 100;
 }
@@ -133,6 +140,10 @@ h3, h4 {
   border-radius: @avatar-size;
 }
 
+.margin-right-H {
+  margin-right: 0.5rem;
+}
+
 // utils
 
 .txt-center {
@@ -147,4 +158,14 @@ h3, h4 {
 .slogan {
   font-size: 1.333em;
   font-weight: 300;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    font-size: 14px;
+  }
+
+  .big-screen {
+    display: none;
+  }
 }
