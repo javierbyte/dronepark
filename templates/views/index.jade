@@ -38,10 +38,14 @@ block content
 			img(src='/images/training2.jpg')
 			img(src='/images/training3.jpg')
 
-	div.about.txt-center.bg-gray: div.content: div.padding-1
+	div.about.txt-center.bg-gray: div.content: div
 		h1 Partners
 		h2 Aliados estratégicos
-		h2 fpv racing + droneproject
+		div.flex.padding-1.flex-content-center.flex-align-center.flex-justify-center.partners
+			a(href='https://www.facebook.com/fpvmx/?fref=ts', target='_blank').padding-1
+				img(src='/images/s-fpv.png')
+			a(href='https://www.facebook.com/DroneProject/?fref=ts', target='_blank').padding-1
+				img(src='/images/s-drone.png')
 
 	div.register.txt-center.padding-3
 		img(src='/images/team.jpg').register-absolute
