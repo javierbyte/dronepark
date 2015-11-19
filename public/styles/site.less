@@ -176,6 +176,16 @@ h3, h4 {
   }
 }
 
+.team {
+  padding-top: 2em;
+  &-player {
+    &-avatar {
+      border-radius: 10em;
+      margin-bottom: 1em;
+    }
+  }
+}
+
 .list {
   &-element {
     padding-top: 0.618em;
@@ -277,6 +287,10 @@ h3, h4 {
 
 .bg-gray {
   background: #eee;
+}
+
+.bg-primary {
+  background: @primary-color;
 }
 
 @media screen and (min-width: 960px) {
