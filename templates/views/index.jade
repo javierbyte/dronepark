@@ -3,40 +3,21 @@ extends ../layouts/default
 block content
 	div.nav.padding-2.white-text.flex.flex-align-stretch.flex-justify-center.big-screen
 		div.flex-1
+		a(href='https://twitter.com/droneparkmx', target='_blank').nav-link Twitter
 		a(href='/social/twitter/login').button.-white Inicia con twitter
 
-	div.intro: div.content.content-big.white-text.flex.flex-direction-column.flex-justify-center.padding-1
-		img(src='/images/dronepark.svg').logo
-		h2 Racing. Fighting. Training.
-		a(href='/social/twitter/login').button-big Inicia sesión con twitter
-		//- a(href='https://docs.google.com/a/javierbyte.com/forms/d/1Plp23sZXKLPfBN3qjRreYbKjsCWlu-MCZWEunQMHWOc/viewform?usp=send_form', target='_blank').intro-email ¿No tienes twitter? Compártenos tu email
+	div.intro
+		div.content.content-big.white-text.flex.flex-direction-column.flex-justify-center.padding-1
+			img(src='/images/dronepark.svg').logo
+			h2 A place to race, fight and enjoy drones.
+			a(href='/social/twitter/login').button-big Inicia sesión con twitter
 
-		div.background-video
-			//- iframe(frameborder="0", height="100%", width="100%", src="https://www.youtube.com/embed/Parubk_HUj8?autoplay=1&controls=0&loop=1&rel=0&showinfo=0&autohide=1&wmode=transparent&hd=1")
-
-	div.about.txt-center: div.content: div.padding-1
-		h1 Racing.
-		h2 El mejor lugar para correr drones.
-		div.slider
-			img(src='/images/racing.jpg')
-			img(src='/images/racing2.jpg')
-			img(src='/images/racing3.jpg')
-
-	div.about.txt-center.bg-gray: div.content: div.padding-1
-		h1 Fighting.
-		h2 Prepárate para Skynet.
-		div.slider
-			img(src='/images/battle.jpg')
-			img(src='/images/battle2.jpg')
-			img(src='/images/battle3.jpg')
+		video(autoplay, loop, poster='/images/fpv.jpg', id='bgvid').background-video
+			source(src='/videos/fpv720.webm', type='video/webm')
 
 	div.about.txt-center: div.content: div.padding-1
-		h1 Training.
-		h2 Aprende a correr un drone con los pros.
-		div.slider
-			img(src='/images/training.jpg')
-			img(src='/images/training2.jpg')
-			img(src='/images/training3.jpg')
+		h1 ¿Qué es DronePark?
+		h2 ¡Ven y vuela tu primer Drone!
 
 	div.about.txt-center.bg-gray: div.content: div
 		h1 Partners

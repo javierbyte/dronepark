@@ -52,11 +52,15 @@ h3, h4 {
 
 .background-video {
   position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  z-index: -1;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 
 // sections
@@ -72,6 +76,11 @@ h3, h4 {
     line-height: 2.5em;
     height: 2.5em;
   }
+
+  &-link {
+    color: #fff;
+    margin-right: 1em;
+  }
 }
 
 .logo {
@@ -84,9 +93,6 @@ h3, h4 {
 .intro {
   overflow: hidden;
   text-align: center;
-
-  background: url(/images/fpv.jpg) no-repeat center;
-  background-size: cover;
 
   &-email {
     color: #fff;
@@ -102,7 +108,7 @@ h3, h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: fade(@primary-color, 85%);
+    background: fade(@primary-color, 75%);
   }
 }
 
@@ -183,6 +189,7 @@ h3, h4 {
   padding-top: 2em;
   &-player {
     &-avatar {
+      display: inline-block;
       border-radius: 10em;
       margin-bottom: 1em;
     }
