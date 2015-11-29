@@ -2,15 +2,14 @@ extends ../layouts/default
 
 block content
 	div.nav.padding-2.white-text.flex.flex-align-stretch.flex-justify-center.big-screen
+		img(src='/images/dronepark.svg').nav-logo
 		div.flex-1
 		a(href='https://twitter.com/droneparkmx', target='_blank').nav-link Twitter
 		a(href='/social/twitter/login').button.-white Inicia con twitter
 
 	div.intro
 		div.content.content-big.white-text.flex.flex-direction-column.flex-justify-center.padding-1
-			img(src='/images/dronepark.svg').logo
-			h2 A place to race, fight and enjoy drones.
-			a(href='/social/twitter/login').button-big Inicia sesión con twitter
+			h1 A place to race, fight and enjoy drones.
 
 		video(autoplay, loop, poster='/images/fpv.jpg', id='bgvid').background-video
 			source(src='/videos/fpv720.webm', type='video/webm')
