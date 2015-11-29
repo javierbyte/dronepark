@@ -26,6 +26,8 @@ html
 		script(src='//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js')
 		script(src='/js/chart.min.js')
 
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+
 		block css
 		block head
 
@@ -34,64 +36,16 @@ html
 			block content
 		script.
 			$(function() {
-				$('.slider').slick({autoplay: true, autoplaySpeed: 2500, infinite: false})
-
-				if ($('.panel')) {
-					var ctx = document.getElementById('progresschart').getContext("2d");
-					var chartProgress = new Chart(ctx).Doughnut([{
-						value: 300,
-						color:"#fff",
-						highlight: "#fff",
-						label: "Progress"
-					}, {
-						value: 50,
-						color: "rgba(255, 255, 255, 0.1)",
-						highlight: "rgba(255, 255, 255, 0.1)",
-						label: "To next level"
-					}], {
-						segmentStrokeWidth: 0,
-						segmentStrokeColor: 'transparent'
-					})
-
-					var ctxRadial = document.getElementById('progressradial').getContext("2d");
-					var chartRadial = new Chart(ctxRadial).Radar({
-						labels: ['Speed', 'Battle', 'Technical', 'Experience', 'Exploration', 'Repair', 'Team'],
-						datasets: [{
-							label: "My First dataset",
-							fillColor: "rgba(220,220,220,0.2)",
-							strokeColor: "rgba(220,220,220,1)",
-							pointColor: "rgba(220,220,220,1)",
-							pointStrokeColor: "#fff",
-							pointHighlightFill: "#fff",
-							pointHighlightStroke: "rgba(220,220,220,1)",
-							data: [65, 59, 90, 81, 56, 55, 40]
-						}, {
-							label: "My Second dataset",
-							fillColor: "rgba(151,187,205,0.2)",
-							strokeColor: "rgba(151,187,205,1)",
-							pointColor: "rgba(151,187,205,1)",
-							pointStrokeColor: "#fff",
-							pointHighlightFill: "#fff",
-							pointHighlightStroke: "rgba(151,187,205,1)",
-							data: [28, 48, 40, 19, 96, 27, 100]
-						}, {
-							label: "My Second dataset",
-							fillColor: "rgba(151,187,205,0.2)",
-							strokeColor: "rgba(151,187,205,1)",
-							pointColor: "rgba(151,187,205,1)",
-							pointStrokeColor: "#fff",
-							pointHighlightFill: "#fff",
-							pointHighlightStroke: "rgba(151,187,205,1)",
-							data: [28, 48, 40, 19, 96, 27, 100]
-						}]
-					}, {
-						pointLabelFontColor: '#fff',
-						datasetStrokeWidth: 1,
-						angleLineColor: 'rgba(255,255,255,0.1)',
-						scaleLineColor: 'rgba(255,255,255,0.1)'
-					})
-				}
+				var $allVideos = $("iframe[src^='//www.youtube.com']");
+				$allVideos.each(function() {
+				  $(this).data('aspectRatio', this.height / this.width).removeAttr('height').removeAttr('width');
+				});
+				$(window).resize(function() {
+				  $allVideos.each(function() {
+				    var $el = $(this);
+				    var newWidth = $el.parent().width();
+				    $el.width(newWidth).height(newWidth * $el.data('aspectRatio'));
+				  });
+				}).resize();
 			})
 		block js
-
-//progressradial

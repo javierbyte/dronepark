@@ -72,6 +72,12 @@ img {
   .padding-@{i} {
     padding: @i * 1rem;
   }
+  .padding-top-@{i} {
+    padding-top: @i * 1rem;
+  }
+  .margin-top-@{i} {
+    margin-top: @i * 1rem;
+  }
   .generate-paddings(@n, (@i + 1));
 }
 .generate-paddings(4);

@@ -1,11 +1,12 @@
 extends ../layouts/default
 
 block content
-	div.nav.padding-2.white-text.flex.flex-align-stretch.flex-justify-center.big-screen
+	div.nav.padding-2.white-text.flex.flex-align-center.flex-justify-center.big-screen
 		img(src='/images/dronepark.svg').nav-logo
 		div.flex-1
-		a(href='https://twitter.com/droneparkmx', target='_blank').nav-link Twitter
-		a(href='/social/twitter/login').button.-white Inicia con twitter
+		a(href='https://twitter.com/droneparkmx', target='_blank').nav-link
+			i.fa.fa-twitter
+			span= ' @DroneParkMX'
 
 	div.intro
 		div.content.content-big.white-text.flex.flex-direction-column.flex-justify-center.padding-1
@@ -14,16 +15,33 @@ block content
 		video(autoplay, loop, poster='/images/fpv.jpg', id='bgvid').background-video
 			source(src='/videos/fpv720.webm', type='video/webm')
 
-	div.about.txt-center: div.content: div.padding-1
-		h1 ¿Qué es DronePark?
-		h2 ¡Ven y vuela tu primer Drone!
+	div: div.content
+		div.txt-center.padding-3
+			h1 ¡Ven el DronePark!
+			h2 ¡Vuela tu primer drone el 12 y 13 de diciembre en el DroneFest!
 
-	div.about.txt-center.bg-gray: div.content: div
+		div.flex.padding-top-1
+			div.padding-1
+				div.txt-xl ¡Faltan pocos días para el #[a(href='http://dronefest.axai.mx/', target='_blank') DroneFest]! Y orgullosamente tendremos un espacio para que puedas venir a volar tu drone o rentar uno.
+
+				a.button.-primary.txt-x.margin-top-2(href='http://www.ticketmaster.com.mx/search?tm_link=tm_header_search&user_input=mexico+drone+fest&q=mexico+drone+fest', target='_blank') Compra tu boleto
+
+			div.padding-1
+				iframe(width="560", height="315", src="https://www.youtube.com/embed/RAvO1nje-00", frameborder="0", allowfullscreen)
+
+	div.txt-center.bg-gray: div.content
+		div.padding-1
+			h1 Vive la experiencia.
+			h2 Siéntete como un colibrí en crack.
+		div.padding-1.video-container
+			iframe(width="560", height="315", src="//www.youtube.com/embed/jF2fnQEVnAc", frameborder="0", allowfullscreen)
+
+	div.about.txt-center: div.content: div
 		h1 Partners
 		h2 Aliados estratégicos
 		div.flex.padding-1.flex-content-center.flex-align-center.flex-justify-center.partners
 			a(href='https://www.facebook.com/events/1704240519798758/', target='_blank').padding-1
-				img(src='/images/s-dronefest.svg')
+				img(src='/images/s-dronefest.svg').partners-logo-dronefest
 			a(href='https://www.facebook.com/fpvmx/?fref=ts', target='_blank').padding-1
 				img(src='/images/s-fpv.png')
 			a(href='https://www.facebook.com/DroneProject/?fref=ts', target='_blank').padding-1
