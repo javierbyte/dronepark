@@ -17,23 +17,28 @@ block content
 
 	div: div.content
 		div.txt-center.padding-3
-			h1 ¡Ven al DronePark!
-			h2 ¡Vuela tu primer drone el 12 y 13 de diciembre en el #[a(href='http://dronefest.axai.mx/', target='_blank') DroneFest]!
+			h1 ¡Sé parte del DronePark!
+			h2 Entérate de eventos y novedades primero que todos.
 
-		div.flex.padding-top-1
-			div.padding-1
-				div.txt-xl ¡Faltan pocos días para el #[a(href='http://dronefest.axai.mx/', target='_blank') DroneFest]! Y orgullosamente tendremos un espacio para que puedas venir a volar tu drone o rentar uno.
-				a.button.-primary.txt-x.margin-top-2(href='http://www.ticketmaster.com.mx/search?tm_link=tm_header_search&user_input=mexico+drone+fest&q=mexico+drone+fest', target='_blank') Compra tu boleto
-
-			div.padding-1.big-screen
-				iframe(width="560", height="315", src="https://www.youtube.com/embed/RAvO1nje-00", frameborder="0", allowfullscreen)
+			div#mc_embed_signup.padding-top-2
+				form#mc-embedded-subscribe-form.validate(action='//pymetic.us3.list-manage.com/subscribe/post?u=63f292ad5b24d91d5951f21c1&id=8c8d5ae827', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
+					div#mc_embed_signup_scroll
+						.mc-field-group
+							input#mce-EMAIL.required.email.input-big(type='email', value='', name='EMAIL', placeholder="Tu email")
+						div#mce-responses.clear
+							div#mce-error-response.response(style='display:none')
+							div#mce-success-response.response(style='display:none')
+						div(style='position: absolute; left: -5000px;', aria-hidden='true')
+							input(type='text', name='b_63f292ad5b24d91d5951f21c1_8c8d5ae827', tabindex='-1', value='')
+						.clear
+							input#mc-embedded-subscribe.button-big.-blue(type='submit', value='Subscribe', name='subscribe')
 
 	div.txt-center.bg-gray: div.content
 		div.padding-1
 			h1 Vive la experiencia.
 			h2 Siéntete como un colibrí en crack.
 		div.padding-1.video-container
-			iframe(width="560", height="315", src="//www.youtube.com/embed/jF2fnQEVnAc", frameborder="0", allowfullscreen)
+			iframe(width="560", height="315", src="//www.youtube.com/embed/7WWEpGQ58s0", frameborder="0", allowfullscreen)
 
 	div.about.txt-center: div.content: div
 		h1 Partners
@@ -77,3 +82,8 @@ block content
 		h1 ¡Únete!
 		h2 Ya somos #[b= socialUsers.length] racers
 		a(href='/social/twitter/login').button-big.-blue Inicia sesión con twitter
+
+	// mailchimp stuff
+	script(type='text/javascript', src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js')
+	script(type='text/javascript').
+		(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
